@@ -1,0 +1,46 @@
+Things i want to cover
+- a little bit about me and my background
+- a brief history of the IPython project
+- the distinctions b/w IPython, IPython Notebook, and other infrastructural features
+- focus in on the IPython Notebook
+- At a basic level the Notebook is a command line interpreter (REPL)
+- except in a web browser (and thus inherits the expressive capabilities of HTML)
+- except it is document (session?) centric
+- the webbyness and documentyness afford rich computational interactions, or "computeryness"
+- the affordances of the IPython Notebook
+- The atomic computational unit is a "cell"
+- Cells can have different types
+- code cells
+- raw text cells
+- heading cells (1 - 6)
+- markdown cells
+- You arrange cells in a linear order to compose notebooks (document)
+- Cells are *executable* (and I'm going to introduce them from least to most complex)
+- When you execute a raw text cell, nothing really happens. The text you typed into the text field is rendered as plain text (with all the formatting you'd expect)
+- When you execute a heading cell it renders the content as an HTML header element `<h1>,<h2>,<h3>`
+- So don't dump a whole bunch of text in a Heading 1 cell otherwise it will be rendered all big 
+- Markdown cells, who here knows of markdown?
+- markdown is a formatting convention for plain text that allows you to write HTML without all the ugly angle brackets
+- So when you execute a markdown cell the plain text contents is transformed into HTML
+- Markdown has conventions for headings, links, images, bold and italic text, quotes, lists, code blocks. It isn't meant for authoring everything in HTML.
+- you *might* wonder, why have special heading cells beyond markdown cells (which support headings)
+- heading cells (vs. doing headers in markdown cells) allow you to but semantically meaningful sections, with anchor tags, into your document.
+- OK, so now on to the really fun stuff, code cells
+- code cells are miniture python text editor
+- highlighting, code completion, object & function introspection & documentation
+- when you "run" a cell, the code is executed in a python kernel running in the background.
+- each notebook has its own kernel thread where variables, data, libraries, etc are in memory 
+- the output (if there is any) is displayed directly below the cell
+- IPython moves beyond text & supports, HTML, JSON, PNG, JPEG, SVG, LaTeX
+- go through exampes from [rich display system notebook example](http://nbviewer.ipython.org/github/ipython/ipython/blob/master/examples/notebooks/Part%205%20-%20Rich%20Display%20System.ipynb) 
+- Images - embedded vs. linked (will discuss when talking about the Notebook document format)
+- audio
+- video & youtube
+- LaTeX - not full power of LaTeX, but supports formula using the MathJax javascript library
+- HTML
+- using the __repr__ method python objects can define how they should be represented as text
+- Pandas DataFrame 
+- wait, what was that %%file thing I did? IPython Magics!
+- IPython Notebooks are also a JSON document format
+- easy to git & easy to share
+- NBConvert lets you transform Notebooks into LaTeX, HTML...even Reveal.js slides!
